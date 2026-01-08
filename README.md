@@ -19,6 +19,3 @@ Governance rules + workflows for using Anti-Gravity and Gemini on the **zzLearns
 2. Add the workspace governance rule at: `.agent/rules/zzlearns-governance.md` and set it to **Always On**
 3. Add the workflow at: `.agent/workflows/governance-check.md`
 4. Run: `/governance-check`
-
-## License
-Choose a license if you want others to reuse/modify this repo (MIT is common for templates/docs).
