@@ -1,4 +1,5 @@
 # zzLearns Governance
+This repository documents an ongoing exploration of governance in human–AI collaboration. For context and reflection, see the accompanying Artifact on my personal site [WIP].
 
 Governance rules + workflows for using Anti-Gravity and Gemini on the **zzLearns** Unity project.
 
