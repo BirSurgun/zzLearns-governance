@@ -1,0 +1,35 @@
+### 2. Automating the Creation (VS Code Snippet)
+Since you work on Windows in VS Code, you can automate this so you don't have to type it every time.
+1. In VS Code, go to **File > Share > User Snippets**.
+2. Select **mdx**.
+3. Paste this configuration:
+```json
+{
+  "New Prompt Archive": {
+    "prefix": "newprompt",
+    "body": [
+      "---",
+      "title: \"${1:Title}\"",
+      "date: \"${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}\"",
+      "author: \"Your Name\"",
+      "type: \"Prompt\"",
+      "status: \"Archive\"",
+      "tags:",
+      "  - ${2:Philosophy}",
+      "---",
+      "",
+      "# The Goal",
+      "${3:What was the intent?}",
+      "",
+      "# The Prompt",
+      "```text",
+      "${4:Paste prompt here}",
+      "```",
+      "",
+      "# Outcome & Context",
+      "- **Result:** ${5:Success/Failure}",
+      "- **Notes:** ${6:Observations}"
+    ],
+    "description": "Create a structured prompt archive file"
+  }
+}
