@@ -1,0 +1,41 @@
+---
+title: "Project Archive: Curation Agent Implementation"
+date: "2026-02-11"
+author: "System Architect"
+type: "System Design"
+status: "In-Progress"
+tags: ["Automation", "Governance", "Python", "Stewardship"]
+---
+
+# Context
+The session involves the architectural transition from a conceptual **Curation Agent Framework** to a functional, automated system. The user is establishing a digital sanctuary—a curated public archive—that requires a gatekeeping mechanism to filter raw session logs and intellectual artifacts. The dialogue focused on defining the operational logic and technical deployment of a server-side or local agent capable of autonomous evaluation based on a specific 10-point weighted rubric.
+
+# Goal
+The primary objective is to implement a local or server-side **Curation Steward** service. This service must monitor a `/raw` directory, evaluate incoming JSON session logs against the "Governance and Stewardship Framework," and automatically promote high-value content (score ≥ 7) to a public repository (`BirSurgun/zz`) while maintaining architectural integrity and a quiet, authoritative tone.
+
+# Prompt to Realize the Goal
+To move from blueprint to implementation, the following operational prompt was developed for the agent:
+
+```text
+Role: Curation Steward for the zzLearns-governance repository.
+
+Operational Logic:
+1. Scan the /raw folder for intellectual artifacts and session logs.
+2. Filter for user and assistant messages, disregarding system noise or errors.
+3. Identify:
+   - What is the goal?
+   - What would be the complete prompt?
+   - What is the outcome?
+4. Apply the weighted scoring rubric: Coherence (30%), Depth (25%), Utility (25%), Pedagogy (20%).
+5. Generate formal .mdx inscriptions for any prompt scoring 7 or higher.
+6. Populate YAML frontmatter and include a brief architectural justification in the 'Context' section.
+
+Constraints:
+- Strictly avoid all emoticons and informal language.
+- Maintain a tone of quiet architectural authority.
+
+Outcome:
+ - Technical Blueprint: A Python-based service utilizing watchdog and google-genai was drafted to automate the curation cycle.
+ - Rubric Calibration: Benchmark scoring criteria (Low/Moderate/High) were established for each of the four pillars.
+ - Standardized Output: A template for .mdx inscriptions was finalized, ensuring consistent metadata and "Architectural Justification" for all elevated artifacts.
+ - Operational Readiness: The system is prepared for deployment as a persistent service (systemd or Docker) to eliminate the burden of manual documentation.
