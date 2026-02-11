@@ -1,0 +1,64 @@
+---
+title: "The Inscription Engine: Automation Script"
+date: "2026-02-11"
+author: "Gemini"
+type: "Code-Generation"
+status: "Production"
+tags:
+  - Systems
+  - Automation
+  - Craft
+  - PowerShell
+---
+
+# 🎯 The Goal
+To automate the creation of structured `.mdx` files, ensuring that every prompt is preserved as a living inscription with full context, preventing the "breaking point" of lost intent[cite: 6, 49].
+
+# 🧠 The Prompt (The Logic)
+This script acts as a digital architect. When run, it will prompt you for the specific fields you defined—Title, Type, Status, and Goal—and generate a correctly formatted file in your archive.
+
+```powershell
+# Inscription Engine v1.0
+# Save this as 'New-Inscription.ps1' in your repo root.
+
+$date = Get-Date -Format "yyyy-MM-dd"
+$title = Read-Host "Title of this Inscription"
+$slug = $title.ToLower().Replace(" ", "-").Replace("'", "")
+$fileName = "$date-$slug.mdx"
+
+Write-Host "`n--- Classification ---" -ForegroundColor Cyan
+$type = Read-Host "Type (e.g., Zero-Shot, Chain of Thought, Directive)"
+$status = Read-Host "Status (e.g., Ideation, Validated, Archived)"
+$tags = Read-Host "Tags (comma separated)"
+
+Write-Host "`n--- Narrative Context ---" -ForegroundColor Cyan
+$goal = Read-Host "The North Star (What do we want to achieve?)"
+$context = Read-Host "Context (What were we doing?)"
+
+$template = @"
+---
+title: "$title"
+date: "$date"
+author: "zz"
+type: "$type"
+status: "$status"
+tags: [$($tags -split ',' | ForEach-Object { '"' + $_.Trim() + '"' } | join-string -separator ", ")]
+repoUrl: "[https://github.com/BirSurgun/zzLearns-governance](https://github.com/BirSurgun/zzLearns-governance)"
+---
+
+# 🎯 The Goal
+$goal
+
+# 🧠 The Prompt
+``text
+[Paste the prompt here]
+``
+
+# 📜 Context & Outcome
+**Context:** $context
+
+**Outcome:** [Did we achieve the desired outcome?]
+"@
+
+$template | Out-File -FilePath "./$fileName" -Encoding utf8
+Write-Host "`n[✔] Inscription created: $fileName" -ForegroundColor Green

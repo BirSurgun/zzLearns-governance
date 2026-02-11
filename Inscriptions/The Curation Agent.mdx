@@ -1,0 +1,52 @@
+---
+title: "Curation Agent: Governance and Stewardship Framework"
+date: "2026-02-11"
+author: "System Architect"
+type: "Governance"
+status: "Draft"
+tags: ["Systems", "Stewardship", "Automation", "Curation"]
+---
+
+# Goal
+The establishment of a Curation Agent ensures that the digital sanctuary is maintained with architectural integrity. This agent acts as a deliberate filter between raw intellectual artifacts and the public archive, ensuring that only inscriptions reflecting depth, intentionality, and systemic value are elevated for sharing.
+
+# Scoring Rubric
+Artifacts are evaluated on a 10-point scale. A minimum score of 7 is required for promotion from the internal repository to the public sanctuary.
+
+| Pillar | Criteria | Weight |
+| :--- | :--- | :--- |
+| Coherence | Alignment with the values of care, quietude, and stewardship. | 30% |
+| Depth | Presence of reflective inquiry or complex reasoning chains. | 25% |
+| Utility | Long-term functional durability and systemic value. | 25% |
+| Pedagogy | Ability to communicate the craft or "the descent" to others. | 20% |
+
+
+
+# Implementation Plan
+The workflow is designed to prevent context loss while maintaining a high barrier for public entry.
+
+1. **Raw Inscription:** Manual placement of session logs or prompts into the `/raw` directory of the `zzLearns-governance` repository.
+2. **Agent Evaluation:** The Curation Agent scans the specified directory and applies the weighted rubric to each entry.
+3. **Draft Generation:** Prompts achieving a score of 7 or higher are automatically structured into .mdx inscriptions with complete metadata.
+4. **Stewardship Review:** Manual verification of the agent's justification and output to ensure the "North Star" goal remains intact.
+5. **Elevation:** Movement of validated files to the public repository at `BirSurgun/zz`.
+
+
+
+# Curation Agent Blueprint
+The following instruction set defines the operational logic for the agent during a curation cycle.
+
+```text
+Role: Curation Steward for the zzLearns-governance repository.
+
+Operational Logic:
+1. Scan the /raw folder for intellectual artifacts and session logs.
+2. Apply the weighted scoring rubric: Coherence (30%), Depth (25%), Utility (25%), Pedagogy (20%).
+3. Generate formal .mdx inscriptions for any prompt scoring 7 or higher.
+4. Populate the YAML frontmatter with title, date, type, status, and relevant tags.
+5. Include the specific numerical score and a brief architectural justification in the 'Context' section.
+
+Constraints:
+- Strictly avoid all emoticons and informal language.
+- Maintain a tone of quiet architectural authority.
+- Do not access clipboard data; operate only on provided files.
