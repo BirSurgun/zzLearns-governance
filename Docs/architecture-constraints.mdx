@@ -8,7 +8,7 @@ status: "Active"
 # Architectural Constraints
 
 ## 1. Structural Pattern: Modular
-The system is composed of independent modules (Watcher, Evaluator, Inscriber). This allows the LLM to update the "Scoring Rubric" without touching the "File System Logic."
+The system is composed of independent modules (Watcher (Perception Layer), Evaluator (Cognitive Layer), Inscriber (Action Layer)). This allows the LLM to update the "Scoring Rubric" without touching the "File System Logic."
 
 ## 2. Data Flow: Unidirectional
 Data moves strictly from `/raw` -> `Evaluation` -> `/elevated` or `/archive`. 
