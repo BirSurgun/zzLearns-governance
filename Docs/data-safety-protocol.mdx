@@ -1,0 +1,26 @@
+---
+title: "Data & Safety Protocol"
+version: "1.0.0"
+type: "Security"
+status: "Active"
+---
+
+# Data & Safety
+
+## 1. Data Handling Scope
+- **Handled:** Markdown inscriptions, JSON session logs, system architecture drafts.
+- **Prohibited:** Authentication keys, passwords, personal identifiers, or financial data. 
+- **Constraint:** If the agent detects a string matching a high-entropy secret (API keys), it must immediately flag the file and halt the elevation process.
+
+## 2. Privacy Guarantees
+- **Inference Privacy:** External API calls are limited to the content of the artifact. No user system metadata is shared.
+- **Data Sovereignty:** The primary "Source of Truth" is the local file system. 
+- **Encryption:** Any data in transit to the evaluation model must be encrypted via standard TLS protocols.
+
+## 3. Safety Guardrails
+- **The "Vault" Principle:** The agent is only authorized to read from `/raw` and write to `/elevated` or `/archive`. It is strictly prohibited from accessing the `.git` directory, root system files, or the user's home directory.
+- **Scrubbing:** During the "Refinement" phase, the agent should proactively scrub any ephemeral system noise (like the MCP connection errors) to ensure only clean intellectual content is promoted.
+
+## 4. Permission Model
+- **Implicit:** Archiving of low-score artifacts.
+- **Explicit:** Elevation to the public sanctuary requires a manual verification of the `Stewardship Review` justification.

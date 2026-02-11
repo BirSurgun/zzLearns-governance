@@ -1,0 +1,25 @@
+---
+title: "Operational Workflow Protocol"
+version: "1.0.0"
+type: "Workflow"
+status: "Active"
+---
+
+# Workflow Preferences
+
+## 1. Strict Sequence
+The agent must never "Implement" (write to the public repository) without first generating a "Plan" and an "Evaluation." 
+
+## 2. Evaluation over Unit Testing
+While standard software projects require a `Test` phase for code correctness, this agent utilizes a **Heuristic Evaluation** phase. 
+- **Action:** The agent must justify the curation score in a 'Context' block before finalizing the file.
+- **Fail State:** If the evaluation falls below 7.0, the implementation phase is aborted, and the workflow terminates at 'Archive'.
+
+## 3. Implementation Constraints
+Implementation is strictly restricted to:
+- Validating YAML frontmatter integrity.
+- Converting raw session logs into clean .mdx syntax.
+- Moving files from `/raw` to `/elevated` or `/archive`.
+
+## 4. Stewardship Review (Human-in-the-loop)
+The final step of any implementation is the **Manual Verification** of the agent's justification. The agent should produce a summary of its "Reasoning Chain" to assist the System Architect during this review.

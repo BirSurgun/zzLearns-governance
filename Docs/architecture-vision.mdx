@@ -1,0 +1,32 @@
+---
+title: "Architecture Vision: zzLearns-governance"
+version: "1.0.0"
+type: "Technical Vision"
+status: "Active"
+---
+
+# Architecture Vision
+
+## 1. Primary Pattern
+- **Pattern:** Event-Driven Pipeline.
+- **Trigger:** File creation in `/raw` directory.
+- **Logic:** Pipeline-based transformation (Cleanse → Evaluate → Inscribe → Elevate).
+
+## 2. Deployment Strategy
+- **Nature:** Local-first Hybrid.
+- **Rationale:** Sensitive raw session logs must remain local until elevated. Only the prompt/log content is sent to the Cloud-based Models for processing.
+
+## 3. Component Definition
+- **Orchestrator:** The Python-based 'Steward' service.
+- **Evaluation Layer:** The 10-point Rubric Engine.
+- **Memory Layer:** - *Short-term:* Session-specific context.
+  - *Long-term:* Repository-wide tagging and cross-reference logic.
+- **Action Engine:** File system operations (move/write) and metadata injection.
+
+## 4. Growth Direction
+- **Phase 1:** (Current) Sequential processing of single logs.
+- **Phase 2:** Multi-agent collaboration where one agent scores and another "Refines" the pedagogical clarity of the .mdx.
+- **Phase 3:** Full Model Context Protocol (MCP) integration for deeper tool access.
+
+## 5. Reference
+- https://www.youtube.com/watch?v=EUU4a7TB4Jk

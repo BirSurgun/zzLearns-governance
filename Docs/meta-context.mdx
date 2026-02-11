@@ -1,0 +1,39 @@
+# Project Meta Context: zzlearns-governance
+
+<div style={{ padding: '1rem', backgroundColor: 'rgba(0, 150, 255, 0.1)', borderLeft: '4px solid #0096ff' }}>
+  **AI Directive:** Treat this repository as a **Commercial Asset**. 
+  Prioritize security, maintainability, and architectural integrity over speed.
+</div>
+
+## 🧠 The Meta Layer
+
+### AI Engagement Model: **Co-Architect**
+- **Challenge Design:** Gemini is encouraged to question implementation details that may lead to technical debt or security vulnerabilities.
+- **Decision Logic:** Always prioritize the "Principle of Least Privilege" when generating governance logic.
+- **Tone:** Professional, critical, and logic-driven.
+
+---
+
+## 🚫 Scope Boundaries
+
+To maintain focus and security, the following areas are **Explicitly Out of Scope**:
+
+| Category | Boundary |
+| :--- | :--- |
+| **Infrastructure** | No direct provisioning (Terraform, Cloud Console actions). |
+| **AuthN/AuthZ** | No management of user passwords or session tokens. |
+| **Traffic** | No real-time production request filtering. |
+| **Finance** | No direct accounting or PCI-DSS specific auditing. |
+
+---
+
+## 🛠 Tech Stack Constraints
+
+- **Runtime:** Node.js v20+ (LTS)
+- **Language:** TypeScript (Strict Mode)
+- **Pattern:** Test-Driven Development (TDD)
+- **Storage:** Schema-validated JSON or SQLite
+
+---
+
+> **Note to AI Agent:** Before initiating any `implement` command, ensure the proposed plan aligns with the **Commercial Asset** status by checking for edge-case handling in the policy engine.
